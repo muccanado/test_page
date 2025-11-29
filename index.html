@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Test Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Aggiunta di un font monospace per i prezzi per facilitare l'allineamento visivo nei test */
+        .price-col {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans p-6">
+
+    <div class="max-w-5xl mx-auto">
+        
+        <!-- Header -->
+        <header class="mb-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold text-indigo-700">TestShop Articoli</h1>
+                <p class="text-gray-500 mt-2">Pagina fittizia per test di estrazione prezzi e layout.</p>
+            </div>
+            <div class="mt-4 sm:mt-0">
+                <button class="bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-700 transition" onclick="document.location.reload()">Aggiorna Dati</button>
+            </div>
+        </header>
+
+        <!-- Product Table Container -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-100 text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                        <tr>
+                            <th class="p-4 border-b border-gray-200">ID</th>
+                            <th class="p-4 border-b border-gray-200">Prodotto</th>
+                            <th class="p-4 border-b border-gray-200">Categoria</th>
+                            <th class="p-4 border-b border-gray-200">Disponibilità</th>
+                            <th class="p-4 border-b border-gray-200 text-right">Prezzo Unitario</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100" id="product-list">
+                        <!-- Item 1 -->
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 text-gray-500 text-sm">#SKU-001</td>
+                            <td class="p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 text-xl">🎧</div>
+                                    <div>
+                                        <div class="font-bold">Cuffie Wireless Pro</div>
+                                        <div class="text-xs text-gray-400">Noise cancelling attivo</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-sm text-gray-600"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Elettronica</span></td>
+                            <td class="p-4 text-sm text-green-600 font-medium">Immediata</td>
+                            <td class="p-4 text-right font-mono font-bold text-gray-800 price-col">€ 129,99</td>
+                        </tr>
+
+                        <!-- Item 2 -->
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 text-gray-500 text-sm">#SKU-002</td>
+                            <td class="p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-xl">☕</div>
+                                    <div>
+                                        <div class="font-bold">Set Tazze Ceramica</div>
+                                        <div class="text-xs text-gray-400">Set da 6 pezzi, bianche</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-sm text-gray-600"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Casa</span></td>
+                            <td class="p-4 text-sm text-green-600 font-medium">Bassa</td>
+                            <td class="p-4 text-right font-mono font-bold text-gray-800 price-col">€ 16,84</td>
+                        </tr>
+
+                        <!-- Item 3 -->
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 text-gray-500 text-sm">#SKU-003</td>
+                            <td class="p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl">👕</div>
+                                    <div>
+                                        <div class="font-bold">T-Shirt Cotone Bio</div>
+                                        <div class="text-xs text-gray-400">Taglia L, Colore Nero</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-sm text-gray-600"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Abbigliamento</span></td>
+                            <td class="p-4 text-sm text-green-600 font-medium">Immediata</td>
+                            <td class="p-4 text-right font-mono font-bold text-gray-800 price-col">€ 9,50</td>
+                        </tr>
+
+                        <!-- Item 4 (Testing thousands separator) -->
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 text-gray-500 text-sm">#SKU-004</td>
+                            <td class="p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 text-xl">💻</div>
+                                    <div>
+                                        <div class="font-bold">Laptop Developer X1</div>
+                                        <div class="text-xs text-gray-400">32GB RAM, 1TB SSD</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-sm text-gray-600"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Elettronica</span></td>
+                            <td class="p-4 text-sm text-red-500 font-medium">Esaurito</td>
+                            <td class="p-4 text-right font-mono font-bold text-gray-800 price-col">€ 1.849,00</td>
+                        </tr>
+
+                        <!-- Item 5 -->
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 text-gray-500 text-sm">#SKU-005</td>
+                            <td class="p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-xl">📚</div>
+                                    <div>
+                                        <div class="font-bold">Manuale Javascript</div>
+                                        <div class="text-xs text-gray-400">Edizione 2024, Copertina rigida</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-sm text-gray-600"><span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Libri</span></td>
+                            <td class="p-4 text-sm text-green-600 font-medium">Immediata</td>
+                            <td class="p-4 text-right font-mono font-bold text-gray-800 price-col">€ 45,20</td>
+                        </tr>
+
+                         <!-- Item 6 (Testing small price) -->
+                         <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4 text-gray-500 text-sm">#SKU-006</td>
+                            <td class="p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 text-xl">🖊️</div>
+                                    <div>
+                                        <div class="font-bold">Penna Sfera Blu</div>
+                                        <div class="text-xs text-gray-400">Inchiostro gel</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-sm text-gray-600"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Ufficio</span></td>
+                            <td class="p-4 text-sm text-green-600 font-medium">Immediata</td>
+                            <td class="p-4 text-right font-mono font-bold text-gray-800 price-col">€ 1,50</td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="bg-gray-50 font-semibold text-gray-700">
+                        <tr>
+                            <td colspan="4" class="p-4 text-right">Totale (Esempio somma)</td>
+                            <td class="p-4 text-right font-mono price-col text-indigo-700">€ 2.051,03</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <!-- Extra section for card view testing if needed -->
+        <div class="mt-12">
+            <h2 class="text-xl font-bold mb-4 text-gray-700">Vista Griglia (Struttura Alternativa)</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-4 rounded shadow border border-gray-100 flex flex-col items-center text-center">
+                    <div class="text-4xl mb-2">⌚</div>
+                    <h3 class="font-bold">Smartwatch Series 5</h3>
+                    <p class="text-sm text-gray-500 mb-2">Water resistant</p>
+                    <div class="mt-auto text-lg font-bold text-indigo-600">€ 249,99</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-4 rounded shadow border border-gray-100 flex flex-col items-center text-center">
+                    <div class="text-4xl mb-2">🎒</div>
+                    <h3 class="font-bold">Zaino Travel</h3>
+                    <p class="text-sm text-gray-500 mb-2">Capienza 30L</p>
+                    <div class="mt-auto text-lg font-bold text-indigo-600">€ 54,00</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-4 rounded shadow border border-gray-100 flex flex-col items-center text-center">
+                    <div class="text-4xl mb-2">🪴</div>
+                    <h3 class="font-bold">Pianta Grassa</h3>
+                    <p class="text-sm text-gray-500 mb-2">Vaso in ceramica</p>
+                    <div class="mt-auto text-lg font-bold text-indigo-600">€ 8,90</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
